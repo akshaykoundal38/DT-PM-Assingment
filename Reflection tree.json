@@ -1,1 +1,73 @@
-
+{
+  "tree_name": "Daily Reflection: The Workshop",
+  "nodes": {
+    "node_1_locus": {
+      "axis": "Locus of Control",
+      "question": "How did you relate to your work environment today?",
+      "options": [
+        {
+          "text": "I acted as the Craftsman; I intentionally structured my time and drove the outcome.",
+          "variable_state": {"locus": "a Proactive Craftsman"},
+          "next_node": "node_2_mindset_internal"
+        },
+        {
+          "text": "I acted as the Apprentice; I responded to the urgent demands handed to me.",
+          "variable_state": {"locus": "a Responsive Apprentice"},
+          "next_node": "node_2_mindset_external"
+        }
+      ]
+    },
+    "node_2_mindset_internal": {
+      "axis": "Mindset",
+      "question": "Since you were directing your work, what was your primary aim?",
+      "options": [
+        {
+          "text": "To execute tasks with precision and validate my current level of mastery.",
+          "variable_state": {"mindset": "validating your current mastery"},
+          "next_node": "node_3_radius"
+        },
+        {
+          "text": "To experiment with my technique and discover where I can push my skills further.",
+          "variable_state": {"mindset": "pushing your skills further"},
+          "next_node": "node_3_radius"
+        }
+      ]
+    },
+    "node_2_mindset_external": {
+      "axis": "Mindset",
+      "question": "Since you were responding to demands, how did you handle the friction?",
+      "options": [
+        {
+          "text": "I focused on getting tasks done flawlessly to meet expectations.",
+          "variable_state": {"mindset": "meeting expectations and surviving the workload"},
+          "next_node": "node_3_radius"
+        },
+        {
+          "text": "I observed the workflow to figure out how to navigate these demands better next time.",
+          "variable_state": {"mindset": "learning from the workflow for the future"},
+          "next_node": "node_3_radius"
+        }
+      ]
+    },
+    "node_3_radius": {
+      "axis": "Radius of Concern",
+      "question": "Where does your satisfaction naturally stem from today?",
+      "options": [
+        {
+          "text": "Ensuring my own workspace is organized and my personal tasks are complete.",
+          "variable_state": {"radius": "your personal goals"},
+          "next_node": "final_reflection"
+        },
+        {
+          "text": "Seeing how my contribution helped the entire shop run smoother for the team.",
+          "variable_state": {"radius": "the collective momentum of the team"},
+          "next_node": "final_reflection"
+        }
+      ]
+    },
+    "final_reflection": {
+      "type": "interpolation",
+      "template": "Today, you operated as {locus}, focusing on {mindset}, with your concern being {radius}."
+    }
+  }
+}
